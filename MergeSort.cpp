@@ -2,7 +2,6 @@
 #include <vector>                      //25/DA/061
 using namespace std;
 
-// Merge two sorted parts of the array
 void merge(vector<int>& arr, int left, int mid, int right) {
     vector<int> temp;
 
@@ -19,19 +18,16 @@ void merge(vector<int>& arr, int left, int mid, int right) {
         }
     }
 
-    // Remaining elements from left half
     while (i <= mid) {
         temp.push_back(arr[i]);
         i++;
     }
 
-    // Remaining elements from right half
     while (j <= right) {
         temp.push_back(arr[j]);
         j++;
     }
 
-    // Copy sorted elements back
     for (int k = 0; k < temp.size(); k++) {
         arr[left + k] = temp[k];
     }
